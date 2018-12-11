@@ -68,8 +68,9 @@ module.exports = function (app) {
     // Dropping Collection
     app.post("/clear", function (req, res) {
         db.Article.deleteMany({})
-            .then(function () {
+            .then(function (data) {
                 console.log("You have dropped the collection!");
+                res.send(data);
             })
             .catch(function (err) {
                 return res.json(err);

@@ -42,6 +42,7 @@ $(document).ready(function () {
     console.log("Clicked on Clear Articles!")
     $.post("/clear").then(function (data) {
       console.log(data);
+      location.reload();
     })
       .catch(function (err) {
         console.log(err);
